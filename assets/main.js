@@ -113,7 +113,6 @@ const app = {
   },
 
   handleEvents: function () {
-    // timeEndSong.textContent = audio.duration;
     const _this = this;
     const cdWidth = cd.offsetWidth;
 
@@ -176,33 +175,6 @@ const app = {
       _this.dynamicProgress(progress, progress.value);
     });
 
-    // progress.onchange = function () {
-    //   _this.seekTime = (progress.value / 100) * audio.duration;
-    //   // console.log(audio.currentTime);
-    //   audio.currentTime = _this.seekTime;
-    //   _this.dynamicProgress();
-    // };
-
-    // progress.addEventListener("mousedown", function () {
-    //   _this.seekTime = (progress.value / 100) * audio.duration;
-    //   audio.currentTime = _this.seekTime;
-    //   _this.dynamicProgress();
-    //   _this.isDragging = true;
-    // });
-    // progress.addEventListener("mousemove", function () {
-    //   if (_this.isDragging) {
-    //     _this.seekTime = (progress.value / 100) * audio.duration;
-    //     _this.dynamicProgress();
-    //     // audio.pause();
-    //     // console.log(progress.value);
-    //   }
-    // });
-    // progress.addEventListener("mouseup", function () {
-    //   audio.currentTime = _this.seekTime;
-    //   _this.isDragging = false;
-    //   // audio.play();
-    // });
-
     // Xu ly khi next song
     nextBtn.onclick = function () {
       if (_this.isRandom) {
@@ -259,7 +231,6 @@ const app = {
           _this.loadCurrentSong();
           _this.restartCd(cdThumbAnimate);
           audio.play();
-          // console.log(songNode.getAttribute("data-index"));
         }
         // Xu ly khi click vao options
         else {
@@ -295,8 +266,6 @@ const app = {
     volume.addEventListener("input", function () {
       let currentVolume = volume.value;
       _this.setVolume(currentVolume);
-      // console.log(currentVolume);
-      console.log(audio.volume);
       _this.dynamicProgress(volume, currentVolume * 100);
     });
   },
