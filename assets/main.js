@@ -170,9 +170,13 @@ const app = {
 
     // Xu ly khi tua bai hat
     progress.addEventListener("input", function () {
+      audio.volume = 0;
       const seekTime = (progress.value / 100) * audio.duration;
       audio.currentTime = seekTime;
       _this.dynamicProgress(progress, progress.value);
+    });
+    progress.addEventListener("mouseup", () => {
+      audio.volume = volume.value;
     });
 
     // Xu ly khi next song

@@ -23,6 +23,7 @@ html {
     rgb(10 74 85 / 95%) 50%,
     rgb(116 122 124) 100%
   );
+  user-select: none;
 }
 
 .player {
